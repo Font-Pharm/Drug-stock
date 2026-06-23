@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
   
-  <link rel="manifest" href='data:application/manifest+json,{"name":"DRUG STOCK PHARMACY","short_name":"DRUG STOCK","start_url":".","display":"standalone","background_color":"#ffffff","theme_color":"#007bff","icons":[{"src":"icon.png","sizes":"512x512","type":"image/png"}]}'>
+  <link rel="manifest" href="manifest.json">
 
   <style>
     body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #ffffff; }
@@ -20,6 +20,16 @@
   </style>
 </head>
 <body>
+
   <iframe src="https://script.google.com/macros/s/AKfycbyGc9LOttWYzwYzi6o24hYmHUWAWwQaaEP-IIxOOrMp-qk9MVV6AkzBujbBsKjNhjghoQ/exec"></iframe>
+
+  <script>
+    // โค้ดสั่งรันระบบ Service Worker หลังบ้านเพื่ออนุญาตให้ติดตั้งลงมือถือได้
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(function() { console.log('PWA Service Worker Registered'); })
+        .catch(function(err) { console.log('PWA Service Worker Failed', err); });
+    }
+  </script>
 </body>
 </html>
